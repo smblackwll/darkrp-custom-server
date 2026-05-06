@@ -17,7 +17,7 @@ Add your custom jobs under the following line:
 ---------------------------------------------------------------------------]]
 
 TEAM_POLICE_OFFICER = DarkRP.createJob("Police Officer", {
-    color = Color(0, 0, 0),
+    color = Color(0, 0, 365),
     model = {
         "models/sentry/sencop/sentrylspdmale1h.mdl",
         "models/sentry/sencop/sentrylspdmale9pm.mdl",
@@ -58,11 +58,11 @@ TEAM_POLICE_OFFICER = DarkRP.createJob("Police Officer", {
 --]]
 
 TEAM_ALDER = DarkRP.createJob("Alderman", {
-    color = Color(0, 0, 0),
+    color = Color(277, 0, 0),
     model = {
-        models/player/gman_high.mdl,
-        models/player/breen.mdl,
-        models/player/magnusson.mdl
+        "models/player/gman_high.mdl",
+        "models/player/breen.mdl",
+        "models/player/magnusson.mdl"
     },
     description = [[
         Aldermen only exist to approve/deny new laws, to complain to the mayor about the needs of their wards (boundaries TBD).
