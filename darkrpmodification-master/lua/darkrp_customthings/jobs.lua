@@ -51,6 +51,34 @@ TEAM_POLICE_OFFICER = DarkRP.createJob("Police Officer", {
     end,
 })
 
+--[[
+    Alderman Job
+    Generated using: DarkRP | Job Generator
+    https://yourdevtools.com/gmod/darkrp-job
+--]]
+
+TEAM_ALDER = DarkRP.createJob("Alderman", {
+    color = Color(0, 0, 0),
+    model = {
+        models/player/gman_high.mdl,
+        models/player/breen.mdl,
+        models/player/magnusson.mdl
+    },
+    description = [[
+        Aldermen only exist to approve/deny new laws, to complain to the mayor about the needs of their wards (boundaries TBD).
+        
+        They can pass ordinances that directly affect their ward (noise levels, sales tax, speed limits, etc.). The Mayor + the other council member can veto these but only if they agree.
+    ]],
+    weapons = {},
+    command = "alderman",
+    max = 2,
+    salary = 45,
+    admin = 0,
+    vote = true,
+    hasLicense = false,
+    category = "Government",
+    canDemote = true,
+})
 
 
 --[[---------------------------------------------------------------------------
