@@ -16,3 +16,12 @@ https://darkrp.miraheze.org/wiki/DarkRP:CustomEntityFields
 
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
+
+DarkRP.createEntity("Boombox", {
+    ent = "rammel_boombox",
+    cmd = "buyboombox",
+    model = "models/rammel/boombox.mdl",
+    price = 1300,
+    max = 2,
+    category = "Other",
+})

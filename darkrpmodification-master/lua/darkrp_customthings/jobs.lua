@@ -51,33 +51,6 @@ TEAM_POLICE_OFFICER = DarkRP.createJob("Police Officer", {
     end,
 })
 
---[[
-    Council Member Job
-    Generated using: DarkRP | Job Generator
-    https://yourdevtools.com/gmod/darkrp-job
---]]
-
-TEAM_COUNCIL = DarkRP.createJob("Council Member", {
-    color = Color(230, 76, 143),
-    model = "models/gman_high.mdl",
-    description = [[
-        You are a council member! 
-        Council members can approve/deny new laws, to complain to the mayor about the needs of their wards, and to pass ordinances.
-        
-        They can pass ordinances that directly affect their ward (noise levels, sales tax, speed limits, etc.). The Mayor + the other council member can veto these but only if they both agree that it needs to be vetoed.
-    ]],
-    weapons = {},
-    command = "council",
-    max = 1,
-    salary = 400,
-    admin = 0,
-    vote = true,
-    hasLicense = false,
-    category = "Government",
-    canDemote = true,
-    mayor = true,
-})
-
 
 
 --[[---------------------------------------------------------------------------
