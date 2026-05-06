@@ -17,6 +17,16 @@ https://darkrp.miraheze.org/wiki/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
+DarkRP.createEntity("Vending Machine", {
+    ent = "ninjadude_vendingmachine",
+    cmd = "buyninjavendingmachine",
+    model = "models/props_interiors/VendingMachineSoda01a.mdl",
+    price = 4500,
+    max = 0,
+    category = "Other",
+})
+
+
 DarkRP.createEntity("Boombox", {
     ent = "rammel_boombox",
     cmd = "buyboombox",
