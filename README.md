@@ -7,7 +7,7 @@ Download DarkRP Modification here:
 https://github.com/FPtje/darkrpmodification
 
 Steam Workshop Collection:
-https://steamcommunity.com/sharedfiles/filedetails/?id=3722554846&edit=true&previewid[]=45779534&fileuploadsuccess=1
+https://steamcommunity.com/sharedfiles/filedetails/?id=3722554846
 
 DarkRP Documentation:
 https://darkrp.miraheze.org/wiki/Main_Page
