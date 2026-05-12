@@ -17,7 +17,7 @@ Add your custom jobs under the following line:
 ---------------------------------------------------------------------------]]
 
 TEAM_POLICE_OFFICER = DarkRP.createJob("Police Officer", {
-    color = Color(0, 0, 0),
+    color = Color(0, 0, 365),
     model = {
         "models/sentry/sencop/sentrylspdmale1h.mdl",
         "models/sentry/sencop/sentrylspdmale9pm.mdl",
@@ -52,32 +52,111 @@ TEAM_POLICE_OFFICER = DarkRP.createJob("Police Officer", {
 })
 
 --[[
-    Council Member Job
+    Alderman Job
     Generated using: DarkRP | Job Generator
     https://yourdevtools.com/gmod/darkrp-job
 --]]
 
-TEAM_COUNCIL = DarkRP.createJob("Council Member", {
-    color = Color(230, 76, 143),
-    model = "models/gman_high.mdl",
+TEAM_ALDER = DarkRP.createJob("Alderman", {
+    color = Color(277, 0, 0),
+    model = {
+        "models/player/gman_high.mdl",
+        "models/player/breen.mdl,",
+        "models/player/magnusson.mdl"
+    },
     description = [[
-        You are a council member! 
-        Council members can approve/deny new laws, to complain to the mayor about the needs of their wards, and to pass ordinances.
+        Aldermen only exist to approve/deny new laws, to complain to the mayor about the needs of their wards (boundaries TBD).
         
-        They can pass ordinances that directly affect their ward (noise levels, sales tax, speed limits, etc.). The Mayor + the other council member can veto these but only if they both agree that it needs to be vetoed.
+        They can pass ordinances that directly affect their ward (noise levels, sales tax, speed limits, etc.). The Mayor + the other council member can veto these but only if they agree.
     ]],
     weapons = {},
-    command = "council",
-    max = 1,
-    salary = 400,
+    command = "alderman",
+    max = 2,
+    salary = 45,
     admin = 0,
     vote = true,
     hasLicense = false,
     category = "Government",
     canDemote = true,
-    mayor = true,
 })
 
+--[[
+    Police Chief Job
+    Generated using: DarkRP | Job Generator
+    https://yourdevtools.com/gmod/darkrp-job
+--]]
+
+TEAM_POLICE_CHIEF = DarkRP.createJob("Police Chief", {
+    color = Color(34, 25, 210),
+    model = "models/sentry/sencop/nypdmale_07pm.mdl",
+    description = [[
+        The police chief controls if SWAT is called, 
+    ]],
+    weapons = {
+        "weapon_bigass_revolver"
+    },
+    command = "policechief",
+    max = 4,
+    salary = 45,
+    admin = 0,
+    vote = true,
+    hasLicense = true,
+    category = "Government",
+    canDemote = true,
+    chief = true,
+    PlayerSpawn = function(ply)
+        ply:SetHealth(100)
+        ply:SetMaxHealth(100)
+        ply:SetArmor(25)
+        ply:SetMaxArmor(25)
+    end,
+    PlayerDeath = function(ply, weapon, killer)
+        ply:teamBan()
+        ply:changeTeam(GAMEMODE.DefaultTeam, true)
+        DarkRP.notifyAll(0, 4, "The Chief died and was demoted") 
+    end,
+    NeedToChangeFrom = TEAM_POLICE_OFFICER,
+})
+
+
+--[[
+    Testing Job Job
+    Generated using: DarkRP | Job Generator
+    https://yourdevtools.com/gmod/darkrp-job
+--]]
+
+TEAM_TEST = DarkRP.createJob("Testing Job", {
+    color = Color(94, 14, 175),
+    model = {
+        "models/xinus22/mikuhl1_no_procedural_bones.mdl",
+        "models/xinus22/tetohl1.mdl",
+        "models/player/zombie_classic.mdl",
+        "models/player/skeleton.mdl",
+        "models/player/charple.mdl"
+    },
+    description = [[
+        The testing job. Should basically be able to do anything.
+    ]],
+    weapons = {},
+    command = "admin_test",
+    max = 5,
+    salary = 4500,
+    admin = 1,
+    vote = false,
+    hasLicense = true,
+    category = "Other",
+    canDemote = false,
+    mayor = true,
+    chief = true,
+    cook = true,
+    hobo = true,
+    PlayerSpawn = function(ply)
+        ply:SetHealth(100)
+        ply:SetMaxHealth(100)
+        ply:SetArmor(100)
+        ply:SetMaxArmor(100)
+    end,
+})
 
 
 --[[---------------------------------------------------------------------------
