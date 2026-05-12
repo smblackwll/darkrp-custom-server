@@ -33,7 +33,27 @@ DarkRP.createShipment("M1911", {
     separate = true,
     category = "Other",
     allowed = {
-        TEAM_GUN
+        TEAM_TEST
+    },
+})
+
+--[[
+  Remington 870 - Shipment
+  Generated using: DarkRP | Shipment Generator
+  https://yourdevtools.com/gmod/darkrp-shipment
+--]]
+
+DarkRP.createShipment("Remington 870", {
+    entity = "arccw_ud_870",
+    model = "models/weapons/arccw/c_ud_870.mdl",
+    amount = 4,
+    price = 56000,
+    pricesep = 14000,
+    noship = false,
+    separate = true,
+    category = "Other",
+    allowed = {
+        TEAM_TEST
     },
 })
 

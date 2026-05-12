@@ -61,7 +61,7 @@ TEAM_ALDER = DarkRP.createJob("Alderman", {
     color = Color(277, 0, 0),
     model = {
         "models/player/gman_high.mdl",
-        "models/player/breen.mdl",
+        "models/player/breen.mdl,",
         "models/player/magnusson.mdl"
     },
     description = [[
@@ -78,6 +78,84 @@ TEAM_ALDER = DarkRP.createJob("Alderman", {
     hasLicense = false,
     category = "Government",
     canDemote = true,
+})
+
+--[[
+    Police Chief Job
+    Generated using: DarkRP | Job Generator
+    https://yourdevtools.com/gmod/darkrp-job
+--]]
+
+TEAM_POLICE_CHIEF = DarkRP.createJob("Police Chief", {
+    color = Color(34, 25, 210),
+    model = "models/sentry/sencop/nypdmale_07pm.mdl",
+    description = [[
+        The police chief controls if SWAT is called, 
+    ]],
+    weapons = {
+        "weapon_bigass_revolver"
+    },
+    command = "policechief",
+    max = 4,
+    salary = 45,
+    admin = 0,
+    vote = true,
+    hasLicense = true,
+    category = "Government",
+    canDemote = true,
+    chief = true,
+    PlayerSpawn = function(ply)
+        ply:SetHealth(100)
+        ply:SetMaxHealth(100)
+        ply:SetArmor(25)
+        ply:SetMaxArmor(25)
+    end,
+    PlayerDeath = function(ply, weapon, killer)
+        ply:teamBan()
+        ply:changeTeam(GAMEMODE.DefaultTeam, true)
+        DarkRP.notifyAll(0, 4, "The Chief died and was demoted") 
+    end,
+    NeedToChangeFrom = TEAM_POLICE_OFFICER,
+})
+
+
+--[[
+    Testing Job Job
+    Generated using: DarkRP | Job Generator
+    https://yourdevtools.com/gmod/darkrp-job
+--]]
+
+TEAM_TEST = DarkRP.createJob("Testing Job", {
+    color = Color(94, 14, 175),
+    model = {
+        "models/xinus22/mikuhl1_no_procedural_bones.mdl",
+        "models/xinus22/tetohl1.mdl",
+        "models/player/zombie_classic.mdl",
+        "models/player/skeleton.mdl",
+        "models/player/charple.mdl"
+    },
+    description = [[
+        The testing job. Should basically be able to do anything.
+    ]],
+    weapons = {},
+    command = "admin_test",
+    max = 5,
+    salary = 4500,
+    admin = 1,
+    vote = false,
+    hasLicense = true,
+    category = "Other",
+    canDemote = false,
+    mayor = true,
+    chief = true,
+    cook = true,
+    hobo = true,
+    PlayerSpawn = function(ply)
+        ply:SetHealth(100)
+        ply:SetMaxHealth(100)
+        ply:SetArmor(100)
+        ply:SetMaxArmor(100)
+    end,
 })
 
 
