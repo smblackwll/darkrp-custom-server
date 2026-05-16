@@ -33,4 +33,20 @@ DarkRP.createEntity("Vending Machine", {
     price = 4500,
     max = 0,
     category = "Other",
+
+    callback = function(ply, ent)
+        timer.Simple(0, function()
+            if not IsValid(ply) or not IsValid(ent) then return end
+
+            ent:Setowning_ent(ply)
+
+            if ent.CPPISetOwner then
+                ent:CPPISetOwner(ply)
+            end
+
+            if ply.addCustomEntity then
+                ply:addCustomEntity(ent)
+            end
+        end)
+    end
 })

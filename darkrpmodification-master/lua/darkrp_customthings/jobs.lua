@@ -149,7 +149,6 @@ TEAM_TEST = DarkRP.createJob("Testing Job", {
     mayor = true,
     chief = true,
     cook = true,
-    hobo = true,
     PlayerSpawn = function(ply)
         ply:SetHealth(100)
         ply:SetMaxHealth(100)
