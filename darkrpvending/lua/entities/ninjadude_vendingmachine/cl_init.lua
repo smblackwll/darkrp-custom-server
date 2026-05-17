@@ -1,8 +1,34 @@
 include("shared.lua")
 
--- Client-side draw function for the Entity
+
+
 function ENT:Draw()
-    self:DrawModel() -- Draws the model of the Entity. This function is called every frame.
+    self:DrawModel()
+
+    local ang = self:GetAngles()
+    local pos = self:GetPos()
+
+    -- Move text to front surface of machine
+    pos = pos + self:GetForward() * 17
+    pos = pos + self:GetUp() * 55
+
+    -- Rotate text onto the surface
+    ang:RotateAroundAxis(ang:Up(), 90)
+    ang:RotateAroundAxis(ang:Forward(), 90)
+
+    cam.Start3D2D(pos, ang, 0.1)
+        draw.SimpleTextOutlined(
+            "Vending Machine",
+            "DermaLarge",
+            0,
+            0,
+            Color(255, 255, 255),
+            TEXT_ALIGN_CENTER,
+            TEXT_ALIGN_CENTER,
+            2,
+            Color(0, 0, 0)
+        )
+    cam.End3D2D()
 end
 
 net.Receive("OpenVendingMachineGUI", function()

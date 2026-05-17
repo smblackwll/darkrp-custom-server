@@ -28,4 +28,4 @@ function ENT:Use(activator)
     net.WriteEntity(self)
     net.Send(activator)
 
-end
+end 
